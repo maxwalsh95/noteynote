@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/5ab9052895.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/components/note_object.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="note-taker-container">
+      <section class="note-taker__navigation">
+        <div class="notes-navigator js-notes-navigator">
+          <div class="notes-navigator__search">
+            <input
+              type="text"
+              class="no-border js-search-input js-notes-navigator__search__input search-input--empty"
+              onfocus="this.placeholder = ''"
+              onblur="this.placeholder = '&#xF002;'"
+              placeholder="&#xF002;"
+            />
+
+            <button class="js-add-btn toy-btn toy-btn--blue">
+              <span class="fa fa-plus"></span>
+            </button>
+          </div>
+
+          <div class="tag-selector"></div>
+
+          <div class="note-list js-note-list"></div>
+        </div>
+      </section>
+
+      <section class="note-taker__notepad">
+        <main class="notepad js-notepad">
+          <div class="notepad__toolbar js-toolbar">
+            <button class="js-save-btn toy-btn toy-btn--blue">SAVE</button>
+            <button class="js-clear-btn toy-btn toy-btn--blue">CLEAR</button>
+            <button class="js-delete-note-btn toy-btn toy-btn--blue">
+              <span class="fa fa-trash"></span>
+            </button>
+          </div>
+
+          <div class="js-tagger tagger">
+            <ul class="js-tagger__tag-list tagger__tag-list"></ul>
+            <input
+              class="js-tagger__tag-input tagger__tag-input no-border"
+              type="text"
+              placeholder="Add tag..."
+            />
+          </div>
+
+          <div class="notepad__note js-notepad__note">
+            <input
+              type="text"
+              class="js-note-title notepad__note__title no-border"
+              placeholder="Title..."
+            />
+
+            <textarea
+              class="scratchpad js-scratchpad rounded-input"
+              name=""
+              id=""
+              cols="100"
+              rows="30"
+            ></textarea>
+          </div>
+        </main>
+      </section>
+    </div>
+  </body>
+</html>

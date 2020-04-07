@@ -1,0 +1,36 @@
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+$tag-height: 30px;
+$input-border-color: rgb(185, 185, 185);
+
+$button-colors: (
+  'orange': (
+    base: #be792a,
+    light: tint(#be792a, 10%),
+    dark: shade(#be792a, 10%),
+  ),
+  'blue': (
+    base: #4675db,
+    light: tint(#4675db, 10%),
+    dark: shade(#4675db, 50%),
+  ),
+);
+
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}

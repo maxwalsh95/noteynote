@@ -1,0 +1,24 @@
+.tagger {
+  margin: 5px 0;
+}
+
+.tagger__tag-list {
+  display: flex;
+  padding: 0;
+  margin: 10px 0;
+  height: $tag-height;
+  width: 100%;
+}
+
+.tag {
+  list-style-type: none;
+  margin: 0 2px;
+
+  button {
+    height: $tag-height;
+  }
+}
+
+.tagger__tag-input {
+  width: 90%;
+}

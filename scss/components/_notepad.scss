@@ -1,0 +1,29 @@
+.notepad {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0;
+}
+
+.notepad__toolbar {
+  display: flex;
+}
+
+.notepad__note {
+  display: flex;
+  flex-direction: column;
+}
+
+.notepad__note__title {
+  margin: 5px 0;
+}
+
+.scratchpad {
+  margin-top: 5px;
+  &:focus {
+    // outline-color: map-deep-get($button-colors, 'blue', 'base');
+    box-shadow: 0px 2px 0px 0px map-deep-get($button-colors, 'blue', 'base'),
+      0px -2px 0px 0px map-deep-get($button-colors, 'blue', 'base'),
+      2px 0px 0px 0px map-deep-get($button-colors, 'blue', 'base'),
+      -2px 0px 0px 0px map-deep-get($button-colors, 'blue', 'base');
+  }
+}

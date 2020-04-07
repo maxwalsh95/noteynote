@@ -1,0 +1,123 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.note-taker-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: 'navigation notepad';
+  height: 100%;
+  margin: auto;
+  width: 50%;
+}
+
+.note-taker__navigation {
+  grid-area: navigation;
+  padding: 0 10px;
+}
+
+.note-taker__notepad {
+  grid-area: notepad;
+  padding: 0 10px;
+}
+
+.rounded-input {
+  border-radius: 2px;
+  border: thin solid $input-border-color;
+  padding: 5px;
+}
+
+.search-input--empty {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size: 14px;
+}
+
+.no-border {
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+.ghost-btn {
+  border: 2px solid;
+  border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.toy-btn {
+  margin: 0 2px;
+  border: 1px solid;
+  border-radius: 4px;
+  text-transform: lowercase;
+  outline: none;
+  padding: 4px 10px;
+  font-size: 18px;
+  transform: translateY(-1px);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@each $colour, $key in $button-colors {
+  .ghost-btn--#{$colour} {
+    border-color: map-deep-get($button-colors, $colour, 'base');
+    background-color: white;
+    color: map-deep-get($button-colors, $colour, 'base');
+    font-weight: bold;
+
+    &:hover {
+      background-color: map-deep-get($button-colors, $colour, 'base');
+      color: white;
+    }
+
+    &:active {
+      background-color: map-deep-get($button-colors, $colour, 'dark');
+      border-color: map-deep-get($button-colors, $colour, 'dark');
+    }
+  }
+
+  .toy-btn--#{$colour} {
+    transition: background-color 0.2s, border-color 0.2s;
+    background-color: map-deep-get($button-colors, $colour, 'base');
+    border-color: map-deep-get($button-colors, $colour, 'base');
+
+    -webkit-box-shadow: 0px
+      2px
+      0px
+      0px
+      tint(map-deep-get($button-colors, $colour, 'dark'), 10%);
+
+    color: white;
+
+    &:hover {
+      background-color: tint(
+        map-deep-get($button-colors, $colour, 'dark'),
+        10%
+      );
+      border-color: tint(map-deep-get($button-colors, $colour, 'dark'), 10%);
+    }
+
+    &:active {
+      background-color: map-deep-get($button-colors, $colour, 'dark');
+      border-color: map-deep-get($button-colors, $colour, 'dark');
+      transform: translateY(0.5px);
+    }
+  }
+}
